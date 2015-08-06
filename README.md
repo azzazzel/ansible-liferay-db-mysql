@@ -62,7 +62,15 @@ None
 Example Playbook
 ----------------
 
-TODO
+```yml
+- hosts: dbservers
+  roles:
+  - role: milendyankov/liferay-db-mysql
+    mysql_databases:
+     - {name: "liferay", encoding: "utf8", collation: "utf8_general_ci"}
+    mysql_users:
+     - {name: "liferay", host: "%", password: "liferay", priv: "liferay.*:ALL"}
+```
 
 License
 -------
